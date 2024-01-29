@@ -28,3 +28,8 @@ DATA = {
 #     'ингредиент2': количество2,
 #   }
 # }
+
+def omlet(request, dish):
+    context = {"recipe": DATA.get(dish, 'empty')
+               }
+    return render(request, 'calculator/index.html', context)
